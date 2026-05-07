@@ -12,12 +12,13 @@ Two-phase delivery: stand up the project skeleton, then implement the complete t
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Project Setup** - Scaffold the file structure, HTML shell, CSS baseline, and module skeleton
+- [x] **Phase 1: Project Setup** - Scaffold the file structure, HTML shell, CSS baseline, and module skeleton
 - [ ] **Phase 2: Core Task Loop** - Implement add, view, complete, and delete tasks end-to-end with localStorage persistence
 
 ## Phase Details
 
 ### Phase 1: Project Setup
+**Status**: Complete (2026-05-07)
 **Goal**: A deployable project skeleton exists — correct file structure, working HTML shell, baseline CSS, and stubbed JS modules — so Phase 2 can begin building features immediately
 **Depends on**: Nothing (first phase)
 **Requirements**: None (infrastructure only)
@@ -29,8 +30,8 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 2 plans
 
 Plans:
-- [ ] 01-01-PLAN.md — Scaffold directory structure and HTML shell (index.html + js/app.js)
-- [ ] 01-02-PLAN.md — Write baseline CSS and stub JS modules (styles.css + tasks.js, storage.js, render.js)
+- [x] 01-01-PLAN.md — Scaffold directory structure and HTML shell (index.html + js/app.js)
+- [x] 01-02-PLAN.md — Write baseline CSS and stub JS modules (styles.css + tasks.js, storage.js, render.js)
 
 ### Phase 2: Core Task Loop
 **Goal**: Users can add tasks, see them listed, mark them complete, and delete them — with all state persisted to localStorage so the list survives a page refresh
@@ -56,5 +57,5 @@ Phases execute in numeric order: 1 → 2
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Project Setup | 0/2 | Not started | - |
+| 1. Project Setup | 2/2 | Complete | 2026-05-07 |
 | 2. Core Task Loop | 0/3 | Not started | - |
