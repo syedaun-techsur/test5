@@ -40,6 +40,7 @@
 **Acceptance Criteria:**
 - [ ] The Add Input field is visible on page load
 - [ ] The Add Input field receives focus automatically on page load
+- [ ] When the user switches back to the TodoApp browser tab (tab gains visibility), the Add Input receives focus automatically so typing can begin without a mouse click
 - [ ] Pressing Enter while the Add Input is focused submits the task
 - [ ] The new task appears immediately at the bottom of the task list without a page reload
 - [ ] The Add Input is cleared automatically after successful submission

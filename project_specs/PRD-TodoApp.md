@@ -61,7 +61,7 @@ People often reach for heavyweight tools (Notion, Todoist, full project-manageme
 - Submit via Enter key or "Add" button
 - Input cleared automatically after successful submission
 - Reject blank or whitespace-only submissions
-- New task appears immediately at the bottom (or top) of the task list
+- New task appears immediately at the bottom of the task list (insertion order: newest last)
 
 **Priority:** P0 (Critical — MVP core loop)
 

@@ -257,12 +257,14 @@ type TaskArray = Task[];
 
 #### Field Constraints Table
 
-| Field | Type | Required | Mutable | Constraints |
-|-------|------|----------|---------|-------------|
-| `id` | `string` | Yes | No | UUID v4 format; unique within the array; assigned by `crypto.randomUUID()` |
-| `text` | `string` | Yes | No | 1–500 characters after trimming; no leading/trailing whitespace stored; internal whitespace preserved |
+> **Column "Mutated in v1":** reflects whether any v1 operation modifies the field after creation. `text` is `No` because there is no edit-task feature in v1 — this is a v1 scope statement, not a permanent data model constraint. A future edit-task feature would make `text` mutable.
+
+| Field | Type | Required | Mutated in v1 | Constraints |
+|-------|------|----------|---------------|-------------|
+| `id` | `string` | Yes | No (immutable by design) | UUID v4 format; unique within the array; assigned by `crypto.randomUUID()` |
+| `text` | `string` | Yes | No (no edit feature in v1) | 1–500 characters after trimming; no leading/trailing whitespace stored; internal whitespace preserved |
 | `completed` | `boolean` | Yes | Yes | Strictly `true` or `false`; toggled only by F02 (`toggleTask`) |
-| `createdAt` | `string` | Yes | No | ISO 8601 UTC format; set to `new Date().toISOString()` at creation moment |
+| `createdAt` | `string` | Yes | No (immutable by design) | ISO 8601 UTC format; set to `new Date().toISOString()` at creation moment |
 
 #### localStorage Layout
 
@@ -304,16 +306,18 @@ While not SQL, the following pseudo-DDL captures the full schema contract:
 ```
 TABLE: tasks  (stored as JSON array in localStorage["todoapp_tasks"])
 ─────────────────────────────────────────────────────────────────────
-COLUMN      TYPE      NOT NULL  IMMUTABLE  CONSTRAINTS
-─────────   ────────  ────────  ─────────  ─────────────────────────────────────────────
-id          string    YES       YES        UUID v4 format; unique within array
-text        string    YES       YES        Length 1–500 (post-trim); no surrounding whitespace
-completed   boolean   YES       NO         true | false only
-createdAt   string    YES       YES        ISO 8601 UTC (e.g. "2026-05-07T09:00:00.000Z")
+COLUMN      TYPE      NOT NULL  MUTATED_IN_V1  CONSTRAINTS
+─────────   ────────  ────────  ─────────────  ─────────────────────────────────────────────
+id          string    YES       NO*            UUID v4 format; unique within array
+text        string    YES       NO**           Length 1–500 (post-trim); no surrounding whitespace
+completed   boolean   YES       YES            true | false only
+createdAt   string    YES       NO*            ISO 8601 UTC (e.g. "2026-05-07T09:00:00.000Z")
 ─────────────────────────────────────────────────────────────────────
 PRIMARY KEY:  id
 ORDERING:     insertion order (index 0 = oldest)
 VERSIONING:   none in v1 (schemaVersion field reserved for future use)
+*  Immutable by design across all versions.
+** Not mutated in v1 (no edit feature). Mutable in principle; a future edit-task feature would update this field.
 ```
 
 ---

@@ -98,12 +98,14 @@ This Functional Requirements Document specifies the exact behaviour of every fea
 - Automatic input clearing and refocus after successful add
 - Rejection of blank / whitespace-only input with inline feedback
 - Immediate DOM rendering of the new task (no page reload)
+- Re-focus of Add Input when the browser tab regains visibility (tab-switch auto-focus)
 
 ---
 
 ### Process
 
 1. Page loads → Add Input is rendered and receives focus automatically.
+1a. When the browser tab transitions from hidden to visible (i.e. the user switches back to the TodoApp tab), the Add Input MUST receive focus automatically via the `visibilitychange` event. This ensures keyboard-only capture is possible immediately on tab switch without a mouse click.
 2. User types task text into the Add Input.
 3. User triggers submission by pressing **Enter** or clicking the **Add Button**.
 4. System trims leading and trailing whitespace from the input value.

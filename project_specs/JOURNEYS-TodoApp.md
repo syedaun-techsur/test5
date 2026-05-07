@@ -85,7 +85,7 @@ Marcus opens the app, adds three tasks, and confirms they are visible — all wi
 | **1. Trigger** | Receives an email; decides to capture the task now | External (email client) | "Invoice by EOD — I need to write that down before I forget." | Momentarily interrupted, slightly anxious | The mental cost of the interruption rises with every second he is not back in his work | The app should be one tab switch away — no navigation, no loading |
 | **2. Switch** | Clicks the TodoApp browser tab | App — main screen (F0, F1) | "OK, it's right here. Input field is ready." | Neutral, efficient | If the input field has lost focus and he has to click it, micro-friction builds | Maintain or restore focus to the input field whenever the tab is revisited |
 | **3. Type & Submit** | Types "Send invoice to [client name]" and presses Enter | Input field (F0) | "Done. One keystroke." | Relieved, focused | Any delay between Enter and list update makes him second-guess whether it registered | Task appears in the list within 1 second; input clears instantly so the next thought can flow |
-| **4. Verify (Glance)** | Glances at the top of the list to confirm the task is there | Task list (F1) | "Yep, it's in the list. Back to work." | Confident | A list that has grown long makes finding the new item harder | Append new tasks at the top so the most recently added item is immediately visible |
+| **4. Verify (Glance)** | Glances at the bottom of the list to confirm the task is there | Task list (F1) | "Yep, it's in the list. Back to work." | Confident | A list that has grown long makes finding the new item harder | Tasks are appended at the bottom (insertion order); on a short daily list this is the natural scan target |
 | **5. Return** | Clicks back to his illustration work tab | External (work app) | "That took about 3 seconds. Good." | Satisfied, re-focused | None at this stage if the previous steps were smooth | Total round-trip time under 5 seconds reinforces the habit of using the app |
 
 #### Key Moments
@@ -313,7 +313,7 @@ The implication: if auto-focus, instant rendering, and reliable localStorage are
 | JRN-01.1 | Continue | JTBD-01.1 | Full core loop completed within 60 seconds; blank Enter ignored |
 | JRN-01.2 | Switch | JTBD-01.2 | Input field focused when tab is re-opened; no mouse required |
 | JRN-01.2 | Type & Submit | JTBD-01.2 | Task submitted and visible within 1 second via keyboard only |
-| JRN-01.2 | Verify (Glance) | JTBD-01.2 | New task visible at top of list with no scroll needed |
+| JRN-01.2 | Verify (Glance) | JTBD-01.2 | New task visible at bottom of list (insertion order); visible without scroll on a typical short daily list |
 | JRN-01.2 | Return | JTBD-01.2 | Total round-trip (switch → type → Enter → verify) ≤ 5 seconds |
 | JRN-01.3 | Review | JTBD-01.3 | Pending and completed tasks visually distinguishable at a glance |
 | JRN-01.3 | Complete | JTBD-01.3 | One click toggles completion; strikethrough appears immediately |
