@@ -26,11 +26,11 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. The Add Input field, Add Button, and task list container are present in the DOM
   3. All four JS module files (`app.js`, `tasks.js`, `storage.js`, `render.js`) exist with correct module structure
   4. CSS loads and applies baseline styles with the `.task--completed` class defined
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 01-01: Scaffold file structure and HTML shell
-- [ ] 01-02: Write baseline CSS and stub JS modules
+- [ ] 01-01-PLAN.md — Scaffold directory structure and HTML shell (index.html + js/app.js)
+- [ ] 01-02-PLAN.md — Write baseline CSS and stub JS modules (styles.css + tasks.js, storage.js, render.js)
 
 ### Phase 2: Core Task Loop
 **Goal**: Users can add tasks, see them listed, mark them complete, and delete them — with all state persisted to localStorage so the list survives a page refresh
