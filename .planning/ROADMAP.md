@@ -18,7 +18,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 ## Phase Details
 
 ### Phase 1: Project Setup
-**Status**: In Progress
+**Status**: executing
 **Goal**: A deployable project skeleton exists — correct file structure, working HTML shell, baseline CSS, and stubbed JS modules — so Phase 2 can begin building features immediately
 **Depends on**: Nothing (first phase)
 **Requirements**: None (infrastructure only)
